@@ -1,0 +1,14 @@
+C:\Users\cypri\repos\TTRPGDiceGames\bin\Debug\net6.0\TTRPGDiceGames.exe
+C:\Users\cypri\repos\TTRPGDiceGames\bin\Debug\net6.0\TTRPGDiceGames.deps.json
+C:\Users\cypri\repos\TTRPGDiceGames\bin\Debug\net6.0\TTRPGDiceGames.runtimeconfig.json
+C:\Users\cypri\repos\TTRPGDiceGames\bin\Debug\net6.0\TTRPGDiceGames.dll
+C:\Users\cypri\repos\TTRPGDiceGames\bin\Debug\net6.0\TTRPGDiceGames.pdb
+C:\Users\cypri\repos\TTRPGDiceGames\obj\Debug\net6.0\TTRPGDiceGames.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cypri\repos\TTRPGDiceGames\obj\Debug\net6.0\TTRPGDiceGames.AssemblyInfoInputs.cache
+C:\Users\cypri\repos\TTRPGDiceGames\obj\Debug\net6.0\TTRPGDiceGames.AssemblyInfo.cs
+C:\Users\cypri\repos\TTRPGDiceGames\obj\Debug\net6.0\TTRPGDiceGames.csproj.CoreCompileInputs.cache
+C:\Users\cypri\repos\TTRPGDiceGames\obj\Debug\net6.0\TTRPGDiceGames.dll
+C:\Users\cypri\repos\TTRPGDiceGames\obj\Debug\net6.0\refint\TTRPGDiceGames.dll
+C:\Users\cypri\repos\TTRPGDiceGames\obj\Debug\net6.0\TTRPGDiceGames.pdb
+C:\Users\cypri\repos\TTRPGDiceGames\obj\Debug\net6.0\TTRPGDiceGames.genruntimeconfig.cache
+C:\Users\cypri\repos\TTRPGDiceGames\obj\Debug\net6.0\ref\TTRPGDiceGames.dll
