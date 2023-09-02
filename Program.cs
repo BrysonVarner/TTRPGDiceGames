@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Metrics;
+using System.Reflection.PortableExecutable;
 
 namespace TTRPGDiceGames
 {
@@ -10,7 +11,12 @@ namespace TTRPGDiceGames
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
 
-            Console.WriteLine("Welcome to the dice roller!");
+            var rollerHeader ="Welcome to the Dice Roller!";
+            Console.SetCursorPosition((Console.WindowWidth - rollerHeader.Length) / 2, Console.CursorTop);
+            Console.WriteLine(rollerHeader);
+            var rollerDivider = "---------------------------------------------";
+            Console.SetCursorPosition((Console.WindowWidth - rollerDivider.Length) / 2, Console.CursorTop);
+            Console.WriteLine(rollerDivider);
             Console.WriteLine("Please select the die type you wish to roll ( D4, D6, D8, D10, D12, D20, or \"clear\" to clear the screen)");
             Console.WriteLine("You can type \"Bones\" to try your luck at winning some gold! If nothing sounds appealing type \"exit\" to quit.");
             var dieType = Console.ReadLine();
