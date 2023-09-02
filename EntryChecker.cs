@@ -21,7 +21,7 @@ namespace TTRPGDiceGames
                 Console.WriteLine("I am sorry, too many invalid entries have been made. Shutting down in...");
                 for (int i = 5; i > 0; i--)
                 {
-                    Console.WriteLine(  i);
+                    Console.WriteLine($"  {i}");
                     Thread.Sleep(1000);
                 }
                 Console.WriteLine("Goodbye!");
@@ -50,12 +50,12 @@ namespace TTRPGDiceGames
                     }
                     else if (myRollTotal < opponentTotal)
                     {
-                        Console.WriteLine($"Your total is less than {opponent.OpponentID} who has {opponent.OpponentRolls.Sum()}.");
+                        Console.WriteLine($"Your total is less than Opponent {opponent.OpponentID} who has {opponent.OpponentRolls.Sum()}.");
                         loseCheck = true;
                     }
                     else 
                     {
-                        Console.WriteLine($"Your total is the same as {opponent.OpponentID} who has {opponent.OpponentRolls.Sum()}.");
+                        Console.WriteLine($"Your total is the same as Opponent {opponent.OpponentID} who has {opponent.OpponentRolls.Sum()}.");
                         tieSplitter++;
                     }
                    
@@ -76,13 +76,13 @@ namespace TTRPGDiceGames
                 }
                 else
                 {
-                    Console.WriteLine($"It is a tie between you and {tieSplitter} opponent(s)! You receive {gold / tieSplitter} gold pieces!");
+                    Console.WriteLine($"It is a tie between you and {tieSplitter} opponent(s)! You receive {gold/(tieSplitter +1)} gold pieces!");
                 }
 
                 Console.WriteLine("Returning to menu in...");
                 for (int i = 5; i > 0; i--)
                 {
-                    Console.WriteLine(  i);
+                    Console.WriteLine($"  {i}");
                     Thread.Sleep(1000);
                 }
                 Console.WriteLine("Press any button to continue...");
