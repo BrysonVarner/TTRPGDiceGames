@@ -38,7 +38,7 @@ namespace TTRPGDiceGames
                 Console.WriteLine("Lets try this again, shall we?");
                 EntryChecker.InvalidEntryChecker();
                 BonesStart();
-            }             // fix to only take numbers  else errors                         
+            }                                     
             for (int i = 0; i < numOfPlayers; i++)
             {
                 opponentsAtTable.Add(new Opponent(i));
@@ -57,7 +57,7 @@ namespace TTRPGDiceGames
                 playerRollTotal = currentRoll0.Sum();
                 foreach (var playerRoll in currentRoll0)
                 {
-                    Console.WriteLine(playerRoll);
+                    Console.WriteLine(  playerRoll);
                     Thread.Sleep(250);
                 }
                 Console.WriteLine($"Your current roll total is at {playerRollTotal}.");
@@ -86,10 +86,11 @@ namespace TTRPGDiceGames
                 BonesMethod.Bones(pot, playerRollTotal);
             }
             else
-            {
-                Console.Clear();
+            {                
                 Console.WriteLine("Aww...Someone's purse strings are too tight I reckon! Your Gold won't be any safer out there than in here!");
                 EntryChecker.InvalidEntryChecker();
+                Console.WriteLine("Press any button to continue...");
+                Console.ReadKey();
                 Program.DiceRoller();
             }
         }

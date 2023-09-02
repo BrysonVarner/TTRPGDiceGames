@@ -21,7 +21,7 @@ namespace TTRPGDiceGames
                 Console.WriteLine("I am sorry, too many invalid entries have been made. Shutting down in...");
                 for (int i = 5; i > 0; i--)
                 {
-                    Console.WriteLine(i);
+                    Console.WriteLine(  i);
                     Thread.Sleep(1000);
                 }
                 Console.WriteLine("Goodbye!");
@@ -36,7 +36,7 @@ namespace TTRPGDiceGames
                 standCounter++;
                 Console.WriteLine($"Your stand count is currently at {standCounter} out of 5.");
             }
-            else if (standCounter >= 5)
+            else if (standCounter >= 4)
             {
                 int tieSplitter = 0;
                 bool loseCheck = false;
@@ -64,39 +64,29 @@ namespace TTRPGDiceGames
                 if (opponentsRemaining.Count == 0 && tieSplitter == 0)
                 {
                     Console.WriteLine("You are the winner!");
-                    Console.WriteLine($"You Win {gold} gold pieces!");
-                    Console.WriteLine("Press any button to continue...");
-                    Console.ReadKey();
-                    Program.DiceRoller();
+                    Console.WriteLine($"You Win {gold} gold pieces!");                    
                 }
                 else if (opponentsRemaining.Count > 0 && tieSplitter == 0)
                 {
-                    Console.WriteLine($"I am sorry, you lose! You almost had those {gold} gold pieces!");
-                    Console.WriteLine("Press any button to continue...");
-                    Console.ReadKey();
-                    Program.DiceRoller();
+                    Console.WriteLine($"I am sorry, you lose! You almost had those {gold} gold pieces!");                   
                 }
                 else if (opponentsRemaining.Count > 0 && loseCheck)
                 {
-                    Console.WriteLine($"I am sorry, you lose! You almost had those {gold} gold pieces!");
-                    Console.WriteLine("Press any button to continue...");
-                    Console.ReadKey();
-                    Program.DiceRoller();
+                    Console.WriteLine($"I am sorry, you lose! You almost had those {gold} gold pieces!"); 
                 }
                 else
                 {
                     Console.WriteLine($"It is a tie between {tieSplitter} players! You receive {gold / tieSplitter} gold pieces!");
-                    Console.WriteLine("Press any button to continue...");
-                    Console.ReadKey();
-                    Program.DiceRoller();
                 }
 
                 Console.WriteLine("Returning to menu in...");
                 for (int i = 5; i > 0; i--)
                 {
-                    Console.WriteLine(i);
+                    Console.WriteLine(  i);
                     Thread.Sleep(1000);
                 }
+                Console.WriteLine("Press any button to continue...");
+                Console.ReadKey();
                 Program.DiceRoller();
             }
         }
