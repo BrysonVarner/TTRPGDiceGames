@@ -76,7 +76,7 @@ namespace TTRPGDiceGames
                 }
                 else
                 {
-                    Console.WriteLine($"It is a tie between {tieSplitter} players! You receive {gold / tieSplitter} gold pieces!");
+                    Console.WriteLine($"It is a tie between you and {tieSplitter} opponent(s)! You receive {gold / tieSplitter} gold pieces!");
                 }
 
                 Console.WriteLine("Returning to menu in...");

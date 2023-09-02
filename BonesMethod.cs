@@ -46,54 +46,46 @@ namespace TTRPGDiceGames
             Console.WriteLine("You ready to play?");           
             Opponent.BustList.Clear();
             Opponent.OpponentList = opponentsAtTable;
-            var _verify = Console.ReadLine();
-            if (_verify.Equals("yes", StringComparison.OrdinalIgnoreCase) || _verify.Equals("y", StringComparison.OrdinalIgnoreCase))
+            Console.WriteLine("Press any button to continue...");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine($"Ante up, {numOfPlayers + 1} and only one winner... well, maybe one...");
+            pot = +(opponentsAtTable.Count + 1);
+            Console.WriteLine($"The pot is currently at {numOfPlayers + 1} gold pieces");
+            var currentRoll0 = DiceController.BaldursBones(3);
+            playerRollTotal = currentRoll0.Sum();
+            foreach (var playerRoll in currentRoll0)
             {
-                Console.Clear();
-                Console.WriteLine($"Ante up, {numOfPlayers + 1} and only one winner... well, maybe one...");
-                pot = +(opponentsAtTable.Count + 1);
-                Console.WriteLine($"The pot is currently at {numOfPlayers + 1} gold pieces");
-                var currentRoll0 = DiceController.BaldursBones(3);
-                playerRollTotal = currentRoll0.Sum();
-                foreach (var playerRoll in currentRoll0)
+                Console.WriteLine($"You rolled a {playerRoll}");
+                Thread.Sleep(250);
+            }
+            Console.WriteLine($"Your current roll total is at {playerRollTotal}.");
+            Console.WriteLine();
+            foreach (var opponent in opponentsAtTable)//Roll for each opponent and display
+            {
+                int opponentRollThis;
+                opponent.OpponentRolls.Clear();
+                var opponentRoll = DiceController.BaldursBones(3);
+                foreach (var roll in opponentRoll)
                 {
-                    Console.WriteLine(  playerRoll);
-                    Thread.Sleep(250);
-                }
-                Console.WriteLine($"Your current roll total is at {playerRollTotal}.");
-                Console.WriteLine();
-                foreach (var opponent in opponentsAtTable)//Roll for each opponent and display
-                {
-                    int opponentRollThis;
-                    opponent.OpponentRolls.Clear();
-                    var opponentRoll = DiceController.BaldursBones(3);
-                    foreach (var roll in opponentRoll)
-                    {
                         Console.WriteLine($"The roll was {roll}.");
                         Thread.Sleep(250);
-                    }
-                    opponentRollThis = +opponentRoll.Sum();
-                    opponent.OpponentRolls.Add(opponentRollThis);
-                    Console.WriteLine($"Opponent {opponent.OpponentID} rolled {opponentRollThis}.");
-                    Console.WriteLine();
-                    if (opponent.OpponentRolls.Sum() > 21)
-                    {
+                }
+                opponentRollThis = +opponentRoll.Sum();
+                opponent.OpponentRolls.Add(opponentRollThis);
+                Console.WriteLine($"Opponent {opponent.OpponentID} rolled {opponentRollThis}.");
+                Console.WriteLine();
+                if (opponent.OpponentRolls.Sum() > 21)
+                {
                         Console.WriteLine($"Opponent {opponent.OpponentID} Busts!");
                         Opponent.BustList.Add(opponent);
                         Thread.Sleep(500);                       
-                    }
                 }
-                BonesMethod.Bones(pot, playerRollTotal);
             }
-            else
-            {                
-                Console.WriteLine("Aww...Someone's purse strings are too tight I reckon! Your Gold won't be any safer out there than in here!");
-                EntryChecker.InvalidEntryChecker();
-                Console.WriteLine("Press any button to continue...");
-                Console.ReadKey();
-                Program.DiceRoller();
-            }
+            BonesMethod.Bones(pot, playerRollTotal);
+            
         }
+    
 
         public static void Bones(int gold, int currentScore)
         {
@@ -118,7 +110,7 @@ namespace TTRPGDiceGames
                 var rollTotal =+ currentRoll.Sum();                
                 foreach (var playerRoll in currentRoll)
                 {
-                    Console.WriteLine(playerRoll);
+                    Console.WriteLine($"You rolled a {playerRoll}");
                 }
                 var newTotal = rollTotal + newTotalOld;
                 Console.WriteLine($"You are currently at {newTotal}.");
