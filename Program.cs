@@ -96,6 +96,7 @@ namespace TTRPGDiceGames
                 Console.Clear();
                 Console.WriteLine("Please enter a valid response");
                 EntryChecker.InvalidEntryChecker();
+                DiceRoller();
             }
         }
         static void Main(string[] args)
@@ -137,12 +138,7 @@ namespace TTRPGDiceGames
 
             Console.ReadKey();
             Console.Clear();
-            DiceRoller();
-               
-
-           
-
-            
+            DiceRoller(); 
         }
     
     }
